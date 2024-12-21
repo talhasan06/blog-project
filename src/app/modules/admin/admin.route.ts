@@ -4,7 +4,7 @@ import { USER_ROLE } from "../user/user.constant.js";
 import { AdminControllers } from "./admin.controller.js";
 
 const router = express.Router();
-router.post(
+router.patch(
   "/users/:userId/block",
   auth(USER_ROLE.admin),
   AdminControllers.blockUser

@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.post(
   "/",
-  auth(USER_ROLE.admin, USER_ROLE.user),
+  auth(USER_ROLE.user),
   validateRequest(BlogValidations.createValidationSchema),
   BlogControllers.createBlog
 );
