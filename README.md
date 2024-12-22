@@ -204,6 +204,10 @@ Allows an admin to block a user by updating the isBlocked property to true.
 
 Allows an admin to delete any blog by its ID.
 
+---
+
+## File Structure
+
 ```
 src/
 ├── app/
