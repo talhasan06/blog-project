@@ -13,7 +13,7 @@ app.use(cors());
 //application routes
 app.use("/api", router);
 app.get("/", (req, res) => {
-    res.send("Hello, world!");
+    res.send("Welcome to the Blog Project API");
 });
 // Error handling
 app.use(globalErrorHandler);

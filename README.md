@@ -8,7 +8,7 @@ A robust RESTful API for managing blog posts with user authentication and author
 
 ## Features
 
-- User authentication (Sign up, Login, Logout)
+- User authentication (Register, Login)
 - JWT based authorization with access and refresh tokens
 - CRUD operations for blog posts
 - User can only modify their own blog posts
@@ -68,26 +68,30 @@ JWT_REFRESH_EXPIRES_IN=7d
 
 4. Start the development server
 
-`npm run dev`
+`npm run start-dev`
 
 ## API Endpoints
 
-- `POST https://blog-project-node-tau.vercel.app/api/auth/register` - Register a new user
-- `POST https://blog-project-node-tau.vercel.app/api/auth/login` - Login user
-- `PATCH https://blog-project-node-tau.vercel.app/api/blogs/:id` - update Blog only - user
-- `DELETE https://blog-project-node-tau.vercel.app//api/blogs/:id` - Delete a blog
+- `POST` https://blog-project-node-tau.vercel.app/api/auth/register - Register a new user
+- `POST` https://blog-project-node-tau.vercel.app/api/auth/login - Login user
+- `PATCH` https://blog-project-node-tau.vercel.app/api/blogs/:id - update Blog only - user
+- `DELETE` https://blog-project-node-tau.vercel.app/api/blogs/:id - Delete a blog
 
-- `PATCH https://blog-project-node-tau.vercel.app//api/blogs
-` - Get all blog posts
+- `GET` https://blog-project-node-tau.vercel.app/api/blogs - Get all blog posts
 
-- `GET /api/v1/blogs/:id` - Get a specific blog post
+- `PATCH` https://blog-project-node-tau.vercel.app/api/admin/users/:userId/block - Block a user
+- `DELETE` https://blog-project-node-tau.vercel.app/api/admin/blogs/:id - Admin can delete any blog by blogId
 
-- `PATCH https://blog-project-node-tau.vercel.app/api/admin/users/:userId/block` - Block a user
-- `DELETE https://blog-project-node-tau.vercel.app/api/admin/blogs/:id` - User can delete any blog by blogId
+## Admin Login
+
+```
+{
+    "email": "tamim@gmail.com",
+    "password": "password1234"
+}
+```
 
 # Request & Response Examples
-
-## Api Endpoints
 
 ### 1. Register User
 
@@ -159,7 +163,7 @@ by using this url user can only delete his/her own blog not others
 
 ### 5. Get All Blogs (Public)
 
-#### PATCH
+#### GET
 
 `https://blog-project-node-tau.vercel.app/api/blogs`
 
@@ -176,7 +180,9 @@ Public for all to fetch all blogs with options for searching, sorting, and filte
 
 #### Example Request URL:
 
-`/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=60b8f42f9c2a3c9b7cbd4f18`
+```
+https://blog-project-node-tau.vercel.app/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=60b8f42f9c2a3c9b7cbd4f18
+```
 
 ### 6. Admin actions
 
@@ -203,10 +209,14 @@ src/
 ├── app/
 │ ├── config/
 │ ├── errors/
+│ ├── interface/
 │ ├── middlewares/
 │ ├── modules/
+│ │ ├── admin/
 │ │ ├── auth/
-│ │ └── blog/
+│ │ ├── blog/
+│ │ └── user/
+│ └── routes/
 │ └── utils/
 ├── app.ts
 └── server.ts
