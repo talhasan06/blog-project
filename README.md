@@ -75,7 +75,7 @@ JWT_REFRESH_EXPIRES_IN=7d
 - `POST` https://blog-project-node-tau.vercel.app/api/auth/register - Register a new user
 - `POST` https://blog-project-node-tau.vercel.app/api/auth/login - Login user
 - `PATCH` https://blog-project-node-tau.vercel.app/api/blogs/:id - update Blog only - user
-- `DELETE` https://blog-project-node-tau.vercel.app/api/blogs/:id - Delete a blog
+- `DELETE` https://blog-project-node-tau.vercel.app/api/blogs/:id - Only user can delete his/her own blog
 
 - `GET` https://blog-project-node-tau.vercel.app/api/blogs - Get all blog posts
 

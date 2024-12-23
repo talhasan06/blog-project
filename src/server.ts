@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
 import { Server } from "http";
+
+import mongoose from "mongoose";
 import config from "./app/config/index.js";
 import app from "./app.js";
 
