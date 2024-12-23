@@ -70,6 +70,16 @@ JWT_REFRESH_EXPIRES_IN=7d
 
 `npm run start-dev`
 
+## Request Header: Authorization
+
+For endpoints that require authentication, include the following header in your requests:
+
+```
+Authorization: Bearer <token>
+```
+
+Replace <token> with the valid JWT provided during login.
+
 ## API Endpoints
 
 - `POST` https://blog-project-node-tau.vercel.app/api/auth/register - Register a new user
